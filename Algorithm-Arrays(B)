@@ -1,0 +1,71 @@
+B) Implement programs for 2-d arrays.
+a. Sum of row element, column element and diagonal element
+mat = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+
+print("Rows sum:")
+for row in mat:
+    print(sum(row))
+
+print("Columns sums:")
+for j in range(3):
+    col=mat[0][j] + mat[1][j] + mat[2][j]
+    print(col)
+
+d1 = mat[0][0] + mat[1][1] + mat[2][2]
+d2 = mat[0][0] + mat[1][1] + mat[2][2]
+
+print("Primary Diagonal:",d1)
+print("Secondary Diagonal:",d2)
+
+b. Sum of two matrices.
+A = [
+    [1,2,3],
+    [4,5,6]
+]
+
+B = [
+    [7,8,9],
+    [1,2,3]
+]
+
+result = [
+    [0,0,0],
+    [0,0,0]
+]
+
+for i in range(2):
+    for j in range(3):
+        result[i][j] = A[i][j] + B[i][j]
+
+print("Sum of matrices:")
+for row in result:
+    print(row)
+
+
+c. Multiplication of two matrices.
+A = [
+    [1,2,3],
+    [4,5,6]
+]
+
+B = [
+    [7,8,9],
+    [1,2,3]
+]
+
+result = [
+    [0,0,0],
+    [0,0,0]
+]
+
+for i in range(2):
+    for j in range(3):
+        result[i][j] = A[i][j] + B[i][j]
+
+print("Sum of matrices:")
+for row in result:
+    print(row)
