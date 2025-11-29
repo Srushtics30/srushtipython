@@ -1,0 +1,57 @@
+#Write a program to create a class constructor and methods, initialize object using constructor and all the methods
+class CS:
+    def __init__(self, name):
+        self.name = name
+
+    def method(self):
+        print("This is a method")
+        print("Hello !, My name is  "  +  self.name)
+
+    def study(self):
+        print("We are studying OOPs in Python")
+
+print(CS)
+p1 =CS("John")
+p2 =CS("Tom")
+
+p1.method()
+p2.method()
+p2.study()
+
+#Write a program to create a class with 2 methods, create a object calling one of the methods and from that method call another method which returns the value back to the calling method.
+class CS:
+    def __init__(self,name):
+        self.name = name
+
+    def method1(self):
+        print("Calling method 2 from 1")
+
+        message = self.method2()
+        print("Method 1 received : "+ message)
+
+    def method2(self):
+        print(" Calling method 2 " +  self.name)
+        return "Hello, this is method 2," + self.name
+
+p1 = CS("Jerry")
+
+p1.method1()
+
+#write a program to create variables outside the class and apply logic.
+coat1 = 899
+coat2 = 1599
+
+class price:
+    def shopping(self, price):
+        if price >= 1000:
+            return "Too costly"
+        else:
+            return "Available in good price range"
+
+pri = price()
+
+res1 = pri.shopping(coat1)
+res2 = pri.shopping(coat2)
+
+print("Price Range of Coat 1 : ", coat1, "is", res1)
+print("Price Range of Coat 2 : ", coat2, "is", res2)
