@@ -1,0 +1,108 @@
+# Q1 : Write a Program to demonstrate single inheritance
+# one base -> 1 derived
+class Person:
+    def __init__(self,name):
+        self.name = name
+
+class Student(Person):
+    def __init__(self,name,id):
+        Person.__init__(self,name)
+        self.id = id
+
+s = Student("Q",35)
+
+print("Student Name : ", s.name)
+print("Student ID : ", s.id)
+
+# Q2 : Multiple Inheritance
+# Two base classes → one child class)
+
+class father:
+    def __init__(self,fname):
+        self.fname = fname
+
+class mother:
+    def __init__(self,mname):
+        self.mname = mname
+
+class child(father,mother):
+    def __init__(self, fname, mname):
+        father.__init__(self, fname)
+        mother.__init__(self, mname)
+
+c = child("John", "Anna")
+
+print("Father Name : ", c.fname)
+print("Mother Name : ",c.mname)
+
+# Q3 : Multilevel Inheritance
+#(Grandparent → Parent → Child)
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Employee(Person):
+    def __init__(self, name, emp_id):
+        super().__init__(name)
+        self.emp_id = emp_id
+
+class Manager(Employee):
+    def __init__(self, name, emp_id, department):
+        super().__init__(name, emp_id)
+        self.department = department
+
+m = Manager("Alice", 201, "HR")
+print("Name : ", m.name)
+print("ID: ", m.emp_id)
+print("Department : ", m.department)
+
+#Q3 D: Hierarchical Inheritance
+# (One parent → many child classes)
+
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Student(Person):
+    def __init__(self, name, roll_no):
+        super().__init__(name)
+        self.roll_no = roll_no
+
+class Teacher(Person):
+    def __init__(self, name, subject):
+        super().__init__(name)
+        self.subject = subject
+
+s = Student("Mike", 101)
+t = Teacher("Smith", "Math")
+
+print("Name : ",s.name)
+print("Roll No: ", s.roll_no)
+print("Teacher's Name : ", t.name)
+print("Subject : ", t.subject)
+
+#Q5 : Hybrid Inheritance
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+class Student(Person):
+    def __init__(self, name, roll_no):
+        super().__init__(name)
+        self.roll_no = roll_no
+
+class Sports:
+    def __init__(self, sport):
+        self.sport = sport
+
+class SportsStudent(Student, Sports):
+    def __init__(self, name, roll_no, sport):
+        Student.__init__(self, name, roll_no)
+        Sports.__init__(self, sport)
+
+ss = SportsStudent("Mike", 101, "Cricket")
+print("Name : ", ss.name)
+print("Roll NO.: ", ss.roll_no)
+print("Sport : ", ss.sport)
+
